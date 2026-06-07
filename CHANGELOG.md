@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kivancakmak/MiniProject4-BackendServerCloud/compare/v1.0.0...v1.1.0) (2026-06-07)
+
+
+### Features
+
+* add grayscale conversion endpoint (/convert/grayscale) ([c2f6ee2](https://github.com/kivancakmak/MiniProject4-BackendServerCloud/commit/c2f6ee2096523f31a6a9d053d4375d000feb6cac))
+
 # 1.0.0 (2026-06-07)
 
 
