@@ -1,0 +1,21 @@
+# Python / venv
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+*.log
+
+# Ortam degiskenleri / gizli anahtarlar
+.env
+
+# Medya ve yerel test ciktilari
+media/
+test_*.png
+test_*.jpg
+
+# Lint / CI artiklari
+.ruff_cache/
+node_modules/
