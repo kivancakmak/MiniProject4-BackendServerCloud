@@ -1,0 +1,28 @@
+# Python / venv
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Git / CI / lint (runtime'da gereksiz)
+.git/
+.github/
+.gitignore
+.pre-commit-config.yaml
+.ruff_cache/
+node_modules/
+
+# Dev bagimliliklari ve surumleme dosyalari
+requirements-dev.txt
+release.config.js
+publish/
+CHANGELOG.md
+VERSION
+README.md
+
+# Yerel veritabani / gizli anahtarlar / test ciktilari
+db.sqlite3
+.env
+test_*.png
+test_*.jpg
+media/
