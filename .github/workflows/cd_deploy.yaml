@@ -1,0 +1,27 @@
+name: CD Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Azure VM over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          # Herhangi bir komut hata verirse job fail olsun.
+          script_stop: true
+          script: |
+            cd ~/MiniProject4-BackendServerCloud
+            git pull origin main
+            docker build -t backend-cloud:latest .
+            docker stop backend-cloud || true
+            docker rm backend-cloud || true
+            docker run -d -p 8000:8000 --name backend-cloud --restart unless-stopped backend-cloud:latest
+            docker image prune -f
